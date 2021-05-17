@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react'
 import TypeIt from 'typeit-react';
-export const Home = () => {
+export const PageHome = () => {
     return (
         <Fragment>
             <section className="main" data-rellax-speed="-5" data-rellax-zindex="0">
