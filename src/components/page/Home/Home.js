@@ -1,5 +1,6 @@
 import React, {Fragment} from 'react'
 import TypeIt from 'typeit-react';
+import {SectionServices} from '../../parts/sections/Services';
 export const PageHome = () => {
     return (
         <Fragment>
@@ -9,7 +10,7 @@ export const PageHome = () => {
 				<a className="more" href="#services"><i className="icon more"></i></a>
 			</div>
             </section>
-            {/*<? $TMPL->loadElement("sections/services"); ?>*/}
+            <SectionServices/>
             <section className="top-services dark">
                 <div className="container-fluid">
                     <div className="row">

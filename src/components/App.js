@@ -1,7 +1,7 @@
 import React from 'react';
 import {BrowserRouter,Route,Switch} from 'react-router-dom';
 import { PageHome } from "./page/Home/Home"
-import { Header } from "./parts/Header";
+import { Header } from "./parts/Header/Header";
 import { FullLoader } from './parts/FullLoader';
 
 export default class App extends React.Component {
