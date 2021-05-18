@@ -1,12 +1,12 @@
 import React from 'react';
-
+import CE from '../../../ce';
 export const SectionServices = () => {
     return (
     <section className="services">
         <div className="container">
             <div className="row">
                 <div className="col-lg-4 d-lg-block">
-                    <img src="/addict/template/assets/images/mac.png" alt="" className="mac"/>
+                    <img src={CE.getUrl("/addict/template/assets/images/mac.png")} alt="" className="mac"/>
                 </div>
                 <div className="col-lg-8 col-md-12">
                     <h2>Чем мы <br/>занимаемся</h2>

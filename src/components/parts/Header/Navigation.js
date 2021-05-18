@@ -1,11 +1,7 @@
-import React, {useContext, useState, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import logo from "../../../assets/images/logo.png";
 import logo_nonback from "../../../assets/images/logo.png";
-import {CtxApi} from '../../../context/Api';
-
-function getPath(path) {
-    return "http://b2lab.ru"+path;
-}
+import CE from '../../../ce';
 
 const NavServiceList = (props) => {
     return (<div className="subnav">
@@ -38,10 +34,10 @@ const NavProductList = (props) => {
                         return <div 
                                 key={item.id} 
                                 className="col-6 prod"
-                                style={{backgroundImage:"url("+getPath(item.back_image)+")"}}
+                                style={{backgroundImage:"url("+CE.getUrl(item.back_image)+")"}}
                             >
                             <div className="dark"></div>
-                            <img src={getPath(item.image)} alt="" className="logo"/>
+                            <img src={CE.getUrl(item.image)} alt="" className="logo"/>
                             <div className="description">
                                 <b>{item.name}</b> -{item.description}	</div>
                             <a href="/products/19">Подробнее</a>
@@ -55,19 +51,14 @@ const NavProductList = (props) => {
 
 export const Navigation = () => {
     const hClass="top";
-    const api = useContext(CtxApi);
     const [services, setServices] = useState([]);
     const [prods,setProds] = useState([]);
     useEffect (() => {
-        api.getMenu().then((response)=>{
-            let nList = [];
-            for (let k in response.data.cats) {
-                nList.push(response.data.cats[k]);
-            };
-            setServices(nList);
+        CE.API.getMenu().then((response)=>{
+            setServices(response.data.cats);
             setProds(response.data.prods);
         })
-    },[api])
+    },[])
     
     return (
             <header className={hClass}>

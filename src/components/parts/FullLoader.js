@@ -1,7 +1,6 @@
 import React from 'react';
 
 export const FullLoader = (props) => {
-    console.log(props);
     if (!props.hide) {
         return (
             <div className="preloader">
