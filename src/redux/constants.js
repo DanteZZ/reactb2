@@ -1,2 +1,0 @@
-export const SHOW_FULL_LOADER = "SHOW_FULL_LOADER";
-export const HIDE_FULL_LOADER = "HIDE_FULL_LOADER";

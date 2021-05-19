@@ -14,9 +14,14 @@ const getMenu = () => {
     return apiGet("get_menu");
 };
 
+const getServicesOnly = () => {
+    return apiGet("get_services_only");
+};
+
 const API = {
     url:url,
-    getMenu
+    getMenu,
+    getServicesOnly
 };
 
 const ce = {API,getUrl};

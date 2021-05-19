@@ -25,7 +25,6 @@ const NavServiceList = (props) => {
 }
 
 const NavProductList = (props) => {
-    console.log(props.prods);
     return (
         <div className="subnav full">
             <div className="row prods">
