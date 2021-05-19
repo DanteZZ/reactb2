@@ -1,6 +1,7 @@
 import React, {Fragment} from 'react'
 import TypeIt from 'typeit-react';
 import {SectionServices} from '../../parts/sections/Services';
+import {ComputePay} from '../../parts/sections/ComputePay';
 export const PageHome = () => {
     return (
         <Fragment>
@@ -29,6 +30,7 @@ export const PageHome = () => {
                     </div>
                 </div>
             </section>
+            <ComputePay/>
             {
                 /*
                 <? $TMPL->loadElement("sections/portfolio","home"); ?>
