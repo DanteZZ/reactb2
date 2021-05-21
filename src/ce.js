@@ -18,10 +18,27 @@ const getServicesOnly = () => {
     return apiGet("get_services_only");
 };
 
+const getPartners = () => {
+    return apiGet("get_partners");
+};
+
+const getPortfolio = (count=false) => {
+    let url = "get_portfolio";
+    if (count) {url+=("?count="+count);};
+    return apiGet(url);
+};
+
+const getFooterSidebar = () => {
+    return apiGet("get_footer_sidebar");
+};
+
 const API = {
     url:url,
     getMenu,
-    getServicesOnly
+    getServicesOnly,
+    getPortfolio,
+    getPartners,
+    getFooterSidebar
 };
 
 const ce = {API,getUrl};

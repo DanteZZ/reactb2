@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import CE from '../../../ce';
+import CE from '../../ce';
 
 const Service = (props) => {
     const info = props.info;
