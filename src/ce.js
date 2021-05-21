@@ -32,13 +32,18 @@ const getFooterSidebar = () => {
     return apiGet("get_footer_sidebar");
 };
 
+const getCase = (id) => {
+    return apiGet("get_case?id="+id);
+};
+
 const API = {
     url:url,
     getMenu,
     getServicesOnly,
     getPortfolio,
     getPartners,
-    getFooterSidebar
+    getFooterSidebar,
+    getCase
 };
 
 const ce = {API,getUrl};

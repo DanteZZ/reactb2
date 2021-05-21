@@ -14,13 +14,13 @@ const Sidebar = () => {
         })
     },[]);
     return (
-        <div class="col-lg-3 col-md-6 col-sm-12">
-            <div class="links-name">Продукты</div>
-            <div class="prods">
+        <div className="col-lg-3 col-md-6 col-sm-12">
+            <div className="links-name">Продукты</div>
+            <div className="prods">
                 {prods.map(item => <Link key={item.id} to={"/products/"+item.id}><img src={CE.getUrl(item.min_image)} alt=""/></Link>)}
             </div>
-            <div class="links-name">Мы в соц. сетях</div>
-            <div class="socials">
+            <div className="links-name">Мы в соц. сетях</div>
+            <div className="socials">
                 {socials.map(item => <a key={item.id} target="_blank" rel="noreferrer" href={item.link}><img src={CE.getUrl(item.footer_image)}  alt=""/></a>)}
             </div>
         </div>
@@ -47,7 +47,7 @@ export const Footer = () => {
                 <div className="col-lg-3 col-md-6 col-sm-12">
                     <div className="links-name">Услуги</div>
                     <ul className="links">
-                       {services.map(item => <li><Link to={"/services/"+item.id}>{item.name}</Link></li>)}
+                       {services.map((item, i) => <li key={i}><Link to={"/services/"+item.id}>{item.name}</Link></li>)}
                     </ul>
                 </div>
                 <div className="col-lg-3 col-md-6 col-sm-12">

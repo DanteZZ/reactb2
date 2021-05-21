@@ -4,7 +4,7 @@ import CE from '../../ce';
 const Case = (props) => {
     const item = props.item;
     return (
-        <Link to={"/portfolio/"+item.id} className="project" style={{width:props.size,height:props.size}}>
+        <Link to={"/case/"+item.id} className="project" style={{width:props.size,height:props.size}}>
             <div className="wrapper" style={{backgroundImage:`url(${CE.getUrl(item.image)})`}}>
                 <div className="dark"></div>
                 <div className="name">{item.name}</div>
