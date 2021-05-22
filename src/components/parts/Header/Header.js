@@ -1,8 +1,9 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Navigation } from './Navigation';
 
 export const Header = () => {
+    const [showMobile,setShowMobile] = useState(false);
     const links = [
         {link:"/",title:"Главная"},
         {link:"/servicecats",title:"Услуги"},
@@ -12,13 +13,13 @@ export const Header = () => {
     ];
     return (
         <Fragment>
-            <nav hidden id="mobile_nav">
-                <i className="icon close"></i>
+            <nav hidden id="mobile_nav" className={showMobile ? "show" : ""}>
+                <i className="icon close" onClick={()=>{setShowMobile(false)}}></i>
                 <ul>
-                    {links.map((item,i) => <li key={i} className="item"><Link to={item.link}>{item.title}</Link></li>)}
+                    {links.map((item,i) => <li key={i} onClick={()=>{setShowMobile(false)}} className="item"><Link to={item.link}>{item.title}</Link></li>)}
                 </ul>
             </nav>
-            <Navigation/>
+            <Navigation setShowMobile={setShowMobile}/>
         </Fragment>
     );
 }

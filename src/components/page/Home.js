@@ -1,13 +1,13 @@
-import React, {Fragment, useEffect} from 'react'
+import React, {Fragment} from 'react'
 import {Link} from 'react-router-dom';
 import TypeIt from 'typeit-react';
 import {SectionServices} from '../sections/Services';
 import {SectionCalculate} from '../sections/Calculate';
 import {SectionPortfolio} from '../sections/Portfolio';
 import {SectionPartners} from '../sections/Partners';
+
 export const PageHome = (props) => {
     props.setTitle("Главная");
-    useEffect(()=>{window.scrollTo(0, 0);},[]);
     return (
         <Fragment>
             <section className="main" data-rellax-speed="-5" data-rellax-zindex="0">

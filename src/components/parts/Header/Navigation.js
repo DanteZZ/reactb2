@@ -49,8 +49,9 @@ const NavProductList = (props) => {
     )
 }
 
-export const Navigation = () => {
+export const Navigation = (props) => {
     const hClass="top";
+    const setShowMobile = props.setShowMobile;
     const [services, setServices] = useState([]);
     const [prods,setProds] = useState([]);
     useEffect (() => {
@@ -79,7 +80,7 @@ export const Navigation = () => {
                     </li>
                     <li className="item"><Link to="/contacts">Контакты</Link></li>
                 </ul>
-                <i className="icon mobile_nav"></i>
+                <i className="icon mobile_nav" onClick={()=>{setShowMobile(true)}}></i>
             </header>
     );
 }

@@ -1,10 +1,9 @@
-import React, {} from 'react';
+import React from 'react';
 
 export const PageCalculate = (props) => {
     const setTitle = props.setTitle;
     const ptypes = ["Сайт","Приложение","Дизайн","СЕО","Маркетинг","Другое"];
     setTitle("Рассчитать стоимость проекта");
-
     return (
         <section className="mh calculate" id="content">
             <div className="container">
@@ -12,7 +11,7 @@ export const PageCalculate = (props) => {
                 <form className="row form" method="POST" action="?send=1">
                     <div className="col-12">
                         <p>
-                            Заполните форму ниже или скачайте <a href="#">бриф</a>.
+                            Заполните форму ниже или скачайте <a href="javascript.void(0)">бриф</a>.
                         </p>
                     </div>
 

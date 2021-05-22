@@ -17,13 +17,12 @@ export const PageService = (props) => {
         })
         window.scrollTo(0, 0);
     },[id,setTitle]);
-
     return (
         <Fragment>
             <section className="mh service-content" id="content">
                 <div className="container">
                     <div className="head">
-                        <img src={CE.getUrl(service.image)} alt="" className="logo"/>
+                    { service.image ? <img src={CE.getUrl(service.image)} alt="" className="logo"/> : ''}
                         <h1 className="lined">{service.name}</h1>
                     </div>
                     <div className="price">
