@@ -404,17 +404,19 @@ header .nav > li > a:hover {
 header .nav > li:hover .subnav.full {
   padding: 0px;
   height: 275px;
+  opacity: 1;
 }
 header .nav > li:hover .subnav {
   height: auto;
   opacity: 1px;
   padding: 32px 48px;
   overflow: auto;
+  opacity: 1;
 }
 header .nav > li .subnav {
   transition: .2s;
   height: 0px;
-  opacity: 0px;
+  opacity: 0;
   overflow: hidden;
   padding: 0px 48px;
   left: 0px;
