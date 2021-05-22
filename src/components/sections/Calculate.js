@@ -1,9 +1,11 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-export const SectionCalculate = () => {
+export const SectionCalculate = (props) => {
+    let classes = "buy";
+    if (props.light) {classes +=" light"}
     return (
-        <section className="buy">
+        <section className={classes}>
             <div className="container">
                 <Link to="/calculate">
                     <span className="red"></span>

@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react'
+import React, {Fragment, useEffect} from 'react'
 import {Link} from 'react-router-dom';
 import TypeIt from 'typeit-react';
 import {SectionServices} from '../sections/Services';
@@ -7,6 +7,7 @@ import {SectionPortfolio} from '../sections/Portfolio';
 import {SectionPartners} from '../sections/Partners';
 export const PageHome = (props) => {
     props.setTitle("Главная");
+    useEffect(()=>{window.scrollTo(0, 0);},[]);
     return (
         <Fragment>
             <section className="main" data-rellax-speed="-5" data-rellax-zindex="0">
@@ -23,13 +24,13 @@ export const PageHome = (props) => {
                             <div className="color grey"></div>
                             <h2 className="title">Комплексные решения "Под ключ"</h2>
                             <div className="text">Комплексные решения для бизнеса, включающие в себя широкий спектр услуг</div>
-                            <Link to="/services/38" className="btn next outline white">Подробнее</Link>
+                            <Link to="/servicecat/38" className="btn next outline white">Подробнее</Link>
                         </div>
                         <div className="col-lg-6 col-md-12 service digital">
                             <div className="color blue"></div>
                             <h2 className="title">Digital-<br/>Услуги</h2>
                             <div className="text">Предоставление любой помощи в сфере digital</div>
-                            <Link to="/services" className="btn next outline white">Подробнее</Link>
+                            <Link to="/servicecats" className="btn next outline white">Подробнее</Link>
                         </div>
                     </div>
                 </div>

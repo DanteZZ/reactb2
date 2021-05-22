@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import { Link } from 'react-router-dom';
 import logo from "../../../assets/images/logo.png";
 import logo_nonback from "../../../assets/images/logo.png";
 import CE from '../../../ce';
@@ -13,7 +14,7 @@ const NavServiceList = (props) => {
                         <ul className="links">
                             {
                                 item.services.map((sitem,si)=>{
-                                    return (<li key={si} className=""><a href="/services/24/57">{sitem.name}</a></li>)
+                                    return (<li key={si} className=""><Link to={"/service/"+sitem.id}>{sitem.name}</Link></li>)
                                 })
                             }
                         </ul>
@@ -39,7 +40,7 @@ const NavProductList = (props) => {
                             <img src={CE.getUrl(item.image)} alt="" className="logo"/>
                             <div className="description">
                                 <b>{item.name}</b> -{item.description}	</div>
-                            <a href="/products/19">Подробнее</a>
+                            <Link to={"/product/"+item.id}>Подробнее</Link>
                         </div>
                     })
                 }				
@@ -61,23 +62,22 @@ export const Navigation = () => {
     
     return (
             <header className={hClass}>
-                <a href="/">
+                <Link to="/">
                     <img src={logo} alt="" className="logo-img"/>
                     <img src={logo_nonback} alt="" className="logo-img-nonback"/>
-                </a>
+                </Link>
                 <ul className="nav">
-                    <li className="item active"><a href="/">Главная</a></li>
+                    <li className="item active"><Link to="/">Главная</Link></li>
                     <li className="item">
-                        <a href="/services">Услуги</a>
+                        <Link to="/servicecats">Услуги</Link>
                         { (services.length>0) ? <NavServiceList services={services} /> : '' }
                     </li>
-                    <li className="item"><a href="/portfolio">Портфолио</a></li>
+                    <li className="item"><Link to="/portfolio">Портфолио</Link></li>
                     <li className="item">
-                        <a href="/products">Продукты</a>
+                        <Link to="/products">Продукты</Link>
                         { (prods.length>0) ? <NavProductList prods={prods} /> : '' }
                     </li>
-                    <li className="item"><a href="/contacts">Контакты</a></li>
-                    <li className="item"><a href="/account">Личный кабинет</a></li>
+                    <li className="item"><Link to="/contacts">Контакты</Link></li>
                 </ul>
                 <i className="icon mobile_nav"></i>
             </header>

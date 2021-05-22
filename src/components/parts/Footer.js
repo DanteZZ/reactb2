@@ -17,7 +17,7 @@ const Sidebar = () => {
         <div className="col-lg-3 col-md-6 col-sm-12">
             <div className="links-name">Продукты</div>
             <div className="prods">
-                {prods.map(item => <Link key={item.id} to={"/products/"+item.id}><img src={CE.getUrl(item.min_image)} alt=""/></Link>)}
+                {prods.map(item => <Link key={item.id} to={"/product/"+item.id}><img src={CE.getUrl(item.min_image)} alt=""/></Link>)}
             </div>
             <div className="links-name">Мы в соц. сетях</div>
             <div className="socials">
@@ -30,7 +30,7 @@ const Sidebar = () => {
 export const Footer = () => {
     const [services,setServices] = useState([]);
     useEffect (() => {
-        CE.API.getServicesOnly().then((response)=>{
+        CE.API.getServiceCats().then((response)=>{
             setServices(response.data.services);
         })
     },[]);
@@ -47,7 +47,7 @@ export const Footer = () => {
                 <div className="col-lg-3 col-md-6 col-sm-12">
                     <div className="links-name">Услуги</div>
                     <ul className="links">
-                       {services.map((item, i) => <li key={i}><Link to={"/services/"+item.id}>{item.name}</Link></li>)}
+                       {services.map((item, i) => <li key={i}><Link to={"/servicecat/"+item.id}>{item.name}</Link></li>)}
                     </ul>
                 </div>
                 <div className="col-lg-3 col-md-6 col-sm-12">

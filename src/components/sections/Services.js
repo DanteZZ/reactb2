@@ -21,7 +21,7 @@ export const SectionServices = () => {
 
     const [services,setServices] = useState([]);
     useEffect (() => {
-        CE.API.getServicesOnly().then((response)=>{
+        CE.API.getServiceCats().then((response)=>{
             setServices(response.data.services);
         })
     },[])

@@ -14,9 +14,25 @@ const getMenu = () => {
     return apiGet("get_menu");
 };
 
-const getServicesOnly = () => {
-    return apiGet("get_services_only");
+const getServiceCats = () => {
+    return apiGet("get_service_cats");
 };
+
+const getServices = (id) => {
+    return apiGet("get_services?category="+id)
+}
+
+const getService = (id) => {
+    return apiGet("get_service?id="+id)
+}
+
+const getProducts = () => {
+    return apiGet("get_products")
+}
+
+const getProduct = (id) => {
+    return apiGet("get_product?id="+id)
+}
 
 const getPartners = () => {
     return apiGet("get_partners");
@@ -28,22 +44,39 @@ const getPortfolio = (count=false) => {
     return apiGet(url);
 };
 
-const getFooterSidebar = () => {
-    return apiGet("get_footer_sidebar");
-};
-
 const getCase = (id) => {
     return apiGet("get_case?id="+id);
 };
 
+const getFooterSidebar = () => {
+    return apiGet("get_footer_sidebar");
+};
+
+const getContacts = () => {
+    return apiGet("get_contacts");
+};
+
+const sendQuestion = () => {
+    return apiGet("send_question");
+};
+
+
+
+
 const API = {
     url:url,
     getMenu,
-    getServicesOnly,
+    getServiceCats,
+    getServices,
+    getService,
+    getProducts,
+    getProduct,
     getPortfolio,
+    getCase,
     getPartners,
     getFooterSidebar,
-    getCase
+    getContacts,
+    sendQuestion
 };
 
 const ce = {API,getUrl};
