@@ -1,7 +1,7 @@
 # Порт сайта b2lab.ru на React
 
 Перенос фронта сайта на React.
-Демо: http://react.b2lab.ru
+Демо: http://react.gal1.ru
 
 ### Используемые библиотеки
 |lib| ver. |
